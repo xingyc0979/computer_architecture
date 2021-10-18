@@ -22,6 +22,10 @@ opc = {
     'Store': '101011'
 }  # static optcode
 machine_code = []
+program = ["Load r1,#0",
+           "Load r2,#1",
+           "Add r3,r1,r2",
+           "Store r3,#3"]
 
 
 def dec2bin(string_num, bit_wide):  # 十进制转化为长度位length的2进制数
@@ -67,10 +71,7 @@ def parse_instructions(cmd):  # 解释器，将汇编指令转化为mips架构�
 
 
 def translation():  # 解释器
-    filename = input("please input source file:\n")
-    with open(filename) as source:
-        lines = source.readlines()
-        for line in lines:
+        for line in program:
             machine_code.append(parse_instructions(line))
 
 

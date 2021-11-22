@@ -20,7 +20,7 @@ opc = {
     'Add': '000000',
     'Load': '100011',
     'Store': '101011'
-}  # static optcode
+}  # static opt
 machine_code = []
 program = ["Load r1,#0",
            "Load r2,#1",
@@ -71,8 +71,8 @@ def parse_instructions(cmd):  # 解释器，将汇编指令转化为mips架构�
 
 
 def translation():  # 解释器
-        for line in program:
-            machine_code.append(parse_instructions(line))
+    for line in program:
+        machine_code.append(parse_instructions(line))
 
 
 def output_machine():
